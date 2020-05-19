@@ -51,92 +51,6 @@ async def comptesbanqueprint(ctx):
     await print (comptesBanque)
     await ctx.send(f'> *Printed*')
 
-'''
------------------------------------------------------------- BANQUE ------------------------------------------------------------
-'''
-@client.command()
-async def money(ctx):
-    nameAuthor = str(ctx.author.id)
-    if not nameAuthor in comptesBanque:
-        comptesBanque[nameAuthor] = startMoneyValue
-    await ctx.send (f'> **Hey <@' + nameAuthor + '> , tu as ' + str(comptesBanque[nameAuthor]) + '$**')
-    print (nameAuthor)
-    pickle.dump(comptesBanque, open('files/comptesBanqueFile', 'wb'))
-
-
-@client.command()
-async def banque(ctx, *arg):
-    if len(arg) > 3:
-        await ctx.send ("```diff\n- Erreur : Trop d'argument (.banque help)```")
-    else:
-        if len(arg) == 0:
-            await ctx.send ('```diff\n- Erreur : Arguments manquants (.banque help)```')
-        else:
-            if arg[0] == 'help':
-                await ctx.send ('```py\n" Commandes disponnibles : "```')
-                await ctx.send ('```css\n.banque help\n.banque set [pseudo] [$]       --> Met le compte de [pseudo] a [$]\n.banque add [pseudo] [$]       --> Ajoute [$] au compte de [pseudo]\n.banque remove [pseudo] [$]    --> Enleve [$] au compte de [pseudo]\n.banque reset [pseudo] [$]     --> Efface le compte de [pseudo]\n.banque view [pseudo]          --> Voir le compte de [pseudo]\n```')
-            else:
-                pseudo = arg[1]
-                pseudo = pseudo.replace('<@!','')
-                pseudo = pseudo.replace('>','')
-
-                if arg[0] == 'set':
-                    if not pseudo in comptesBanque:
-                        comptesBanque[pseudo] = startMoneyValue
-                    comptesBanque[pseudo] = int(arg[2])
-                    await ctx.send ('<@!' + pseudo + '> a maintenant ' + str(comptesBanque[pseudo]))
-
-                if arg[0] == 'add':
-                    if not pseudo in comptesBanque:
-                        comptesBanque[pseudo] = startMoneyValue
-                    comptesBanque[pseudo] += int(arg[2])
-                    await ctx.send ('<@!' + pseudo + '> a maintenant ' + str(comptesBanque[pseudo]))
-
-                if arg[0] == 'remove':
-                    if not pseudo in comptesBanque:
-                        comptesBanque[pseudo] = startMoneyValue
-                    comptesBanque[pseudo] -= int(arg[2])
-                    await ctx.send ('<@!' + pseudo + '> a maintenant ' + str(comptesBanque[pseudo]))
-
-                if arg[0] == 'reset':
-                    comptesBanque[pseudo] = startMoneyValue
-                    await ctx.send ('<@!' + pseudo + '> a maintenant ' + str(comptesBanque[pseudo]))
-
-                if arg[0] == 'view':
-                    if not pseudo in comptesBanque:
-                        comptesBanque[pseudo] = startMoneyValue
-                    await ctx.send ('<@!' + pseudo + '> a ' + str(comptesBanque[pseudo]))
-
-    pickle.dump(comptesBanque, open('files/comptesBanqueFile', 'wb'))
-
-'''
------------------------------------------------------------- TRADE ------------------------------------------------------------
-'''
-
-@client.command()
-async def trade(ctx, *arg):
-    if len(arg) > 3:
-        await ctx.send ("```diff\n- Erreur : Trop d'argument (.trade help)```")
-    else:
-        if len(arg) == 0:
-            await ctx.send ('```diff\n- Erreur : Arguments manquants (.trade help)```')
-        else:
-            if arg[0] == 'help':
-                await ctx.send ('```py\n" Commandes disponnibles : "```')
-                await ctx.send ('```css\n.trade help\n.trade donner [pseudo] [$]     --> Demande a [pseudo] de trader [$] (pour lui)\n.trade recevoir [pseudo] [$]   --> Demande a [pseudo] de trader [$] (pour moi)\n```')
-            else:
-                pseudo = arg[1]
-                pseudo = pseudo.replace('<@!','')
-                pseudo = pseudo.replace('>','')
-
-                if arg[0] == 'set':
-                    if not pseudo in comptesBanque:
-                        comptesBanque[pseudo] = startMoneyValue
-                    comptesBanque[pseudo] = int(arg[2])
-                    await ctx.send ('<@!' + pseudo + '> a maintenant ' + str(comptesBanque[pseudo]))
-
-
-
 @client.command()
 async def report(ctx, someone, *raisons):
     await ctx.channel.purge(limit=1)
@@ -156,6 +70,6 @@ async def on_command_error(ctx, error):
             else:
                 pass
 
-client.run('NjYwMTcwMDE2ODY3NzQ1Nzky.XoZDsA.VcQVj69wojesmKrrZ54Ng_fiSgo')
+client.run('NzAxNTIwNTQxNDU4MzY2NDk1.XsQXqQ.bC6BDjISRZduNTo7EtNRzd0cD2M')
 
 
