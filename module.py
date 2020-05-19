@@ -1,4 +1,4 @@
-import discord
+from discord import *
 import os
 from discord.ext import commands
 import pickle
@@ -43,27 +43,37 @@ async def help(ctx):
     await ctx.send ('```py\n" Commandes disponnibles : "```')
     await cxt.send ()
 
-@client.command()
-@commands.has_role(rAdmin)
-async def clear(ctx, amount=1000):
-    await ctx.channel.purge(limit=amount+1)
 
-
-# ---------------------------------------------------------------------------- #
-#                                     DEBUG                                    #
-# ---------------------------------------------------------------------------- #
-
-@client.command()
-@commands.has_role(rAdmin)
-async def comptesbanqueprint(ctx):
-    await print (comptesBanque)
-    await ctx.send(f'> *Printed*')
 
 @client.command()
 async def report(ctx, someone, *raisons):
     await ctx.channel.purge(limit=1)
     nameAuthor = str(ctx.author.id)
     await ctx.send ('> ' + someone + ' a été report par <@' + nameAuthor + '> pour la raison : *{}*'.format(' '.join(raisons)))
+
+
+# ---------------------------------------------------------------------------- #
+#                                Commandes admin                               #
+# ---------------------------------------------------------------------------- #
+
+@client.command()
+@commands.has_role(rAdmin)
+async def clear(ctx, amount=1000):
+    await ctx.channel.purge(limit=amount+1)
+
+@client.command()
+@commands.has_role(rModération)
+async def mute(ctx):
+    Member = Guild.get_member(arg0)
+    await Member.edit(roles.append('Mute'))
+
+
+
+# ---------------------------------------------------------------------------- #
+#                                     DEBUG                                    #
+# ---------------------------------------------------------------------------- #
+
+
 
 @client.event
 async def on_command_error(ctx, error):

@@ -1,6 +1,6 @@
-import discord
+from discord import *
 from discord.ext import commands
-
+from discord import Guild
 '''
 
 Status : 
@@ -18,6 +18,6 @@ startMoneyValue = 5000
 #                                     Roles                                    #
 # ---------------------------------------------------------------------------- #
 
-rAdmin = discord.guild.Role()
-
+rAdmin = Guild.get_role(role_id=712361516531449906)
+rModération = Guild.get_role(role_id=712361516531449906)
 rjoueur = 'Joueur'
