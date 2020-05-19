@@ -18,6 +18,6 @@ startMoneyValue = 5000
 #                                     Roles                                    #
 # ---------------------------------------------------------------------------- #
 
-rAdmin = 'Admin'
+rAdmin = discord.guild.Role()
 
 rjoueur = 'Joueur'

@@ -8,7 +8,7 @@ from options import *
 #v1.1.0
 
 client = commands.Bot(command_prefix = '.', help_command = None)
-comptesBanque = pickle.load(open('files/comptesBanqueFile', 'rb'))
+
 
 def timeLog():
     named_tuple = time.localtime() # get struct_time
@@ -28,6 +28,12 @@ async def on_ready():
     logsFile.write(timeLog() + ' ===== Bot started =====')
     logsFile.close()
 
+
+
+# ---------------------------------------------------------------------------- #
+#                               Commandes de base                              #
+# ---------------------------------------------------------------------------- #
+
 @client.command()
 async def ping(ctx):
     await ctx.send(f'> ***Pong ! {round(client.latency *1000)}ms***')
@@ -38,16 +44,17 @@ async def help(ctx):
     await cxt.send ()
 
 @client.command()
-@commands.has_role('Admin')
+@commands.has_role(rAdmin)
 async def clear(ctx, amount=1000):
     await ctx.channel.purge(limit=amount+1)
 
-'''
------------------------------------------------------------- DEBUG ------------------------------------------------------------
-'''
+
+# ---------------------------------------------------------------------------- #
+#                                     DEBUG                                    #
+# ---------------------------------------------------------------------------- #
 
 @client.command()
-@commands.has_role('Admin')
+@commands.has_role(rAdmin)
 async def comptesbanqueprint(ctx):
     await print (comptesBanque)
     await ctx.send(f'> *Printed*')
@@ -71,6 +78,6 @@ async def on_command_error(ctx, error):
             else:
                 pass
 
+
+
 client.run('NzAxNTIwNTQxNDU4MzY2NDk1.XsQXqQ.bC6BDjISRZduNTo7EtNRzd0cD2M')
-
-
