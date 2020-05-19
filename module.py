@@ -1,4 +1,4 @@
-from discord import *
+import discord
 import os
 from discord.ext import commands
 import pickle
@@ -64,7 +64,7 @@ async def clear(ctx, amount=1000):
 @client.command()
 @commands.has_role(rModération)
 async def mute(ctx):
-    Member = Guild.get_member(arg0)
+    Member = Guild.get_member(a)
     await Member.edit(roles.append('Mute'))
 
 
