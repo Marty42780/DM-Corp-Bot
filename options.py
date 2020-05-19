@@ -12,3 +12,12 @@ botStatus = discord.Status.online
 botActivity = discord.Game('.help')
 
 startMoneyValue = 5000
+
+
+# ---------------------------------------------------------------------------- #
+#                                     Roles                                    #
+# ---------------------------------------------------------------------------- #
+
+rAdmin = 'Admin'
+
+rjoueur = 'Joueur'
