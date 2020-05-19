@@ -35,9 +35,10 @@ async def ping(ctx):
 @client.command()
 async def help(ctx):
     await ctx.send ('```py\n" Commandes disponnibles : "```')
-    await cxt.send
+    await cxt.send ()
 
 @client.command()
+@commands.has_role('Admin')
 async def clear(ctx, amount=1000):
     await ctx.channel.purge(limit=amount+1)
 
@@ -46,7 +47,7 @@ async def clear(ctx, amount=1000):
 '''
 
 @client.command()
-@commands.has_role('Developpeur')
+@commands.has_role('Admin')
 async def comptesbanqueprint(ctx):
     await print (comptesBanque)
     await ctx.send(f'> *Printed*')
