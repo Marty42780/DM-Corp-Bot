@@ -19,12 +19,7 @@ startMoneyValue = 5000
 #                                     Roles                                    #
 # ---------------------------------------------------------------------------- #
 
-def roleFinder(x):
-    '''Return all roles for the bot
-
-    Arguments:
-        x {[int]} -- [identifiant du role]
-
+'''
 ROLES :
     Staff : (1)
         Fondateur : 10
@@ -34,8 +29,19 @@ ROLES :
     
     Everyone : (2)
         Joueur : 
+'''
+
+def roleFinder(ctx, x):
+    '''Retourne le role demandé
+
+    Arguments:
+        ctx {} -- [description]
+        x {int} -- identifiant du role voir ci-dessus
     '''
-    
-rAdmin = Guild.get_role(role_id=712361516531449906)
-rModération = Guild.get_role(role_id=712361516531449906)
-rjoueur = 'Joueur'
+
+
+    if x == 11:
+        return ctx.Guild.get_role(role_id=712361516531449906)
+        
+    rModération = ctx.Guild.get_role(role_id=712361516531449906)
+    rjoueur = 'Joueur'

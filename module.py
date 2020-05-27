@@ -57,7 +57,7 @@ async def report(ctx, someone, *raisons):
 # ---------------------------------------------------------------------------- #
 
 @client.command()
-@commands.has_role(rAdmin)
+@commands.has_role(roleFinder(ctx, 11))
 async def clear(ctx, amount=1000):
     await ctx.channel.purge(limit=amount+1)
 
