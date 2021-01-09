@@ -56,16 +56,16 @@ async def report(ctx, someone, *raisons):
 #                                Commandes admin                               #
 # ---------------------------------------------------------------------------- #
 
-@client.command()
-@commands.has_role(roleFinder(ctx, 11))
-async def clear(ctx, amount=1000):
-    await ctx.channel.purge(limit=amount+1)
+# @client.command()
+# @commands.has_role(roleFinder(ctx, 11))
+# async def clear(ctx, amount=1000):
+#     await ctx.channel.purge(limit=amount+1)
 
-@client.command()
-@commands.has_role(rModération)
-async def mute(ctx):
-    Member = Guild.get_member(a)
-    await Member.edit(roles.append('Mute'))
+# @client.command()
+# @commands.has_role(rModération)
+# async def mute(ctx):
+#     Member = Guild.get_member(a)
+#     await Member.edit(roles.append('Mute'))
 
 
 
@@ -90,4 +90,4 @@ async def on_command_error(ctx, error):
 
 
 
-client.run('NzAxNTIwNTQxNDU4MzY2NDk1.XsQXqQ.bC6BDjISRZduNTo7EtNRzd0cD2M')
+client.run('NjYwMTcwMDE2ODY3NzQ1Nzky.XgY9PQ.x6O20NzgpbonuPwKtvknpAgC7NY')
