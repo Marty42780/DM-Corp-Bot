@@ -41,7 +41,7 @@ async def ping(ctx):
 @client.command()
 async def help(ctx):
     await ctx.send ('```py\n" Commandes disponnibles : "```')
-    await cxt.send ('')
+    await ctx.send ('')
 
 
 
