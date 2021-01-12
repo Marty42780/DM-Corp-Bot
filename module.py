@@ -1,3 +1,9 @@
+try:
+    import ssl
+    SSLContext = ssl.SSLContext
+except ImportError:  # pragma: no cover
+    ssl = None  # type: ignore
+    SSLContext = object # type: ignore
 import discord
 import os
 from discord.ext import commands
