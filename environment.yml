@@ -1,0 +1,15 @@
+name: BAP-Bot
+channels:
+  - default
+dependencies:
+  - ca-certificates
+  - certifi
+  - onpenssl
+  - pip
+  - python
+  - setuptools
+  - sqlite
+  - vs2015_runtime
+  - wheel
+  - wincertstore
+  - discord

@@ -1,0 +1,8 @@
+si il voit un mot il envoie un gif
+
+traduit les lettres en russe
+[AAaaBБbбCCccDДdдEEeeFfGГgгHhIИiиJЙjйKКkкLЛlлMМmмNНnнOОoоPПpпQqRrSsTtUuVBvвWwXxYyZЗzз]
+
+list = ['A','A','a','a','B','Б','b','б','C','C','c','c','D','Д','d','д','E','E','e','e','F','f','G','Г','g','г','H','h','I','И','i','и','J','Й','j','й','K','К','k','к','L','Л','l','л','M','М','m','м','N','Н','n','н','O','О','o','о','P','П','p','п','Q','q','R','r','S','s','T','t','U','u','V','B','v','в','W','w','X','x','Y','y','Z','З','z','з']
+
+Arrêter la drogue c'est pas très bon pour le cerveau de Martin

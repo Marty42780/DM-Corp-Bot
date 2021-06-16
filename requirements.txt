@@ -1,2 +1,4 @@
 discord
 mysql-connector
+gspread
+oauth2client
